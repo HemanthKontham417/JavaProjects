@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Processed Data</title>
+</head>
+<body>
+    <h2>Processed Data</h2>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th th:each="header : ${data[0].keySet()}" th:text="${header}"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="row : ${data}">
+                <td th:each="value : ${row.values()}" th:text="${value}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/files/upload">Upload Another File</a>
+</body>
+</html>
